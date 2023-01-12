@@ -13,7 +13,13 @@ jobs:
       - name: Harden GitHub Actions Runner
         uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
         with:
-          egress-policy: audit
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            agent.api.stepsecurity.io:443
+            proxy.golang.org:443
+            storage.googleapis.com:443
+            sum.golang.org:443
 
       - name: Checkout
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
@@ -42,16 +48,7 @@ jobs:
       - name: Harden GitHub Actions Runner
         uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
         with:
-          egress-policy: block
-          allowed-endpoints: >
-            github.com:443
-            api.github.com:443
-            pipelines.actions.githubusercontent.com:443
-            pypi.org:443
-            osv-vulnerabilities.storage.googleapis.com:443
-            nvd.nist.gov:443
-            proxy.golang.org:443
-            sum.golang.org:443
+          egress-policy: audit
 
       - name: Checkout
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
