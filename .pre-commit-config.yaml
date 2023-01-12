@@ -1,0 +1,43 @@
+repos:
+  # Common checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-yaml              ### Control YAML format
+      - id: end-of-file-fixer       ###  Fix end of file with one line
+      - id: trailing-whitespace     ### Remove end of line spaces
+      - id: check-added-large-files ### Check files size to add only 500ko max
+      - id: check-merge-conflict    ### Check if there is already merge conflict(s)
+      - id: detect-private-key      ### Detect private keys
+
+  # Checkov (Policy-as-code)
+  - repo: https://github.com/bridgecrewio/checkov.git
+    rev: '2.1.82'
+    hooks:
+      - id: checkov ### Check misconfiguration and security issues
+
+  # Hadolint (Dockerfile linter)
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.10.0
+    hooks:
+      - id: hadolint
+
+  # GoSec (Go linter)
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: v1.0.0-beta.5
+    hooks:
+      - id: go-fmt
+      - id: go-fmt-repo
+      - id: go-vet
+      - id: go-vet-mod
+      - id: go-vet-repo-mod
+      # - id: go-sec-mod # Need to investigate the code to understand what is wrong
+      # - id: go-sec-pkg # Need to investigate the code to understand what is wrong
+      # - id: go-sec-repo-mod # Need to investigate the code to understand what is wrong
+
+  # Conventional Commit (check commit message for managing the versioning and generating the CHANGELOG)
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v1.4.0
+    hooks:
+      - id: conventional-pre-commit ### Check if the commit message is compliant with the conventional commit style
+        stages: [commit-msg]
