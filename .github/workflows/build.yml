@@ -51,6 +51,8 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            auth.docker.io:443
+            docker.io:443
             github.com:443
             nvd.nist.gov:443
             osv-vulnerabilities.storage.googleapis.com:443
