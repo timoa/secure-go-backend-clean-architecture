@@ -1,4 +1,12 @@
-# Go Backend Clean Architecture
+# Go Backend Clean Architecture with DevSecOps best practices
+
+This project is a fork of the Go Backend Clean Architecture developed by [**Amit Shekhar**](https://amitshekhar.me).
+
+The goal is to demonstrate the best practices to maintain automatically a GO project with tools like Renovate (fix dependency vulnerabilities), pre-commit, semantic release (versioning, changelog generation, etc.), GitHub Runner hardening, and other useful DevSecOps tools.
+
+The details of the best practices will be added later.
+
+## Details on the project used to demonstrate the DevSecOps best practices
 
 A Go (Golang) Backend Clean Architecture project with Gin, MongoDB, JWT Authentication Middleware, Test, and Docker.
 
