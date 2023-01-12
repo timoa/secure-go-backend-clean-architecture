@@ -7,7 +7,7 @@ go-test:
 	go test ./...
 
 go-build: go-fmt go-get
-	go build -o main cmd/main.go
+	go build -o bin/main cmd/main.go
 
 go-fmt:
 	go fmt ./...
