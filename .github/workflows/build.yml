@@ -33,7 +33,7 @@ jobs:
         run: make go-build
       
       - name: Run the tests
-        run: make go-build
+        run: make go-test
 
   # -- SAST SCAN --------------------------------------------------------------
   code-security:
