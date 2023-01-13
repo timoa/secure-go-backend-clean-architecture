@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.1...v1.0.2) (2023-01-13)
+
+
+### Bug Fixes
+
+* **cicd:** fix GitHub token for code review ([dd4632a](https://github.com/timoa/secure-go-backend-clean-architecture/commit/dd4632adb51cff6a55c264138ee653598984c2ad))
+
 ## [1.0.1](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.0...v1.0.1) (2023-01-13)
 
 
