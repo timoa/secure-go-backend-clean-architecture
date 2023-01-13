@@ -111,4 +111,4 @@ jobs:
       - name: Prepare Release
         uses: cycjimmy/semantic-release-action@071ef4c9640be3700de2aa7f39e8f4038e0269ed # tag=v3.1.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
