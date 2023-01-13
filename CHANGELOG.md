@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.0...v1.0.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **cicd:** cache the Go dependencies + Go version ([b94d471](https://github.com/timoa/secure-go-backend-clean-architecture/commit/b94d471ca20f05fb8d2d0f5ec12b48f4bbabaa62))
+* **cicd:** fix egress policy for code-review ([5d462dc](https://github.com/timoa/secure-go-backend-clean-architecture/commit/5d462dc7e37e86329367fb1cda0fa0da18256a22))
+* **cicd:** update allow list for Harden Runner ([ba6d4e5](https://github.com/timoa/secure-go-backend-clean-architecture/commit/ba6d4e54d4aff451904e63af3c7ed2b31b3f746d))
+
 # 1.0.0 (2023-01-13)
 
 
