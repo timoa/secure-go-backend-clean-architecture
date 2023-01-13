@@ -34,7 +34,7 @@ jobs:
       - name: Run Staticcheck
         uses: reviewdog/action-staticcheck@a7aa1d4d70d9d20bba4918cd7e8a73e963fd6851 # tag=v1.10.0
         with:
-          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
           filter_mode: nofilter
           fail_on_error: true
@@ -56,5 +56,5 @@ jobs:
       - name: Run Hadolint
         uses: reviewdog/action-hadolint@55be5d2c4b0b80d439247b128a9ded3747f92a29 # tag=v1.33.0
         with:
-          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
