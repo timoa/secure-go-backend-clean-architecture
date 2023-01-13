@@ -1,0 +1,58 @@
+name: Code Review
+
+on: [pull_request]
+
+jobs:
+
+  # -- GO LINT ----------------------------------------------------------------
+  go-lint:
+    name: GO Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden GitHub Actions Runner
+        uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
+        with:
+          egress-policy: allow
+
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+
+      # Setup Go & Build
+      - name: Setup Go
+        uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # v3.5.0
+        with:
+          go-version: "1.19"
+
+      # Build the Go app
+      - name: Build Go app
+        run: make go-build
+
+      # Run staticcheck
+      - name: Run Staticcheck
+        uses: reviewdog/action-staticcheck@a7aa1d4d70d9d20bba4918cd7e8a73e963fd6851 # tag=v1.10.0
+        with:
+          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          reporter: github-pr-review
+          filter_mode: nofilter
+          fail_on_error: true
+
+  # -- DOCKER LINT ------------------------------------------------------------
+  docker-lint:
+    name: Docker Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden GitHub Actions Runner
+        uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
+        with:
+          egress-policy: allow
+
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+
+      - name: Run Hadolint
+        uses: reviewdog/action-hadolint@55be5d2c4b0b80d439247b128a9ded3747f92a29 # tag=v1.33.0
+        with:
+          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          reporter: github-pr-review
