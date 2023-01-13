@@ -87,4 +87,29 @@ jobs:
         with:
           name: reports
           path: reports
- 
+  
+  # -- PRE-RELEASE ------------------------------------------------------------
+  pre-release:
+    name: Pre-Release
+    runs-on: ubuntu-latest
+    needs:
+      - code-security
+      - cloud-security
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Harden GitHub Actions Runner
+        uses: step-security/harden-runner@419f9d6ef954c3c7214dcf0b9babec78755dda8f
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          ref: 'main' # Force checkout of main branch to avoid cache from previous jobs
+          persist-credentials: false
+
+      - name: Prepare Release
+        uses: cycjimmy/semantic-release-action@071ef4c9640be3700de2aa7f39e8f4038e0269ed # tag=v3.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
