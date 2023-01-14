@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.3...v1.0.4) (2023-01-14)
+
+
+### Bug Fixes
+
+* **project:** add SECURITY policy file ([6616f2d](https://github.com/timoa/secure-go-backend-clean-architecture/commit/6616f2df02bc7b79201c45407ceba433eae74e7e))
+
 ## [1.0.3](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.2...v1.0.3) (2023-01-14)
 
 
