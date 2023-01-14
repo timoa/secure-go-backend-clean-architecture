@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.5...v1.0.6) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cicd:** set rights for the build workflow ([055787b](https://github.com/timoa/secure-go-backend-clean-architecture/commit/055787b71b21ab4b46c7c4310270c6a70aa05bf7))
+
 ## [1.0.5](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.4...v1.0.5) (2023-01-14)
 
 
