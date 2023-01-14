@@ -2,6 +2,9 @@ name: Build
 
 on: [push]
 
+# Declare default permissions as read only.
+permissions: read-all
+
 jobs:
 
   # -- TESTS ------------------------------------------------------------------
@@ -125,6 +128,9 @@ jobs:
       - code-quality
       - code-security
     if: github.ref == 'refs/heads/main'
+    
+    permissions:
+      contents: write
 
     steps:
       - name: Harden GitHub Actions Runner
