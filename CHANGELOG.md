@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.4...v1.0.5) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cicd:** set read permissions for workflow that use read only ([7478b5e](https://github.com/timoa/secure-go-backend-clean-architecture/commit/7478b5e936fb295f42cf91303c3d18dae6a11975))
+* **cicd:** use same permissions for workflows ([a533f5f](https://github.com/timoa/secure-go-backend-clean-architecture/commit/a533f5fe126ea011d409d5cd57990797b0574a78))
+
 ## [1.0.4](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.3...v1.0.4) (2023-01-14)
 
 
