@@ -1,3 +1,14 @@
+## [1.0.3](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.2...v1.0.3) (2023-01-14)
+
+
+### Bug Fixes
+
+* **cicd:** add missing SonarCloud config file ([024b555](https://github.com/timoa/secure-go-backend-clean-architecture/commit/024b5553b02110037f9f9ae46bd4467c5a3a95e6))
+* **cicd:** fix SonarCloud job ([412f1ca](https://github.com/timoa/secure-go-backend-clean-architecture/commit/412f1cade9a1fe9f8c41dbd1eb5212d58a312591))
+* **cicd:** fix SonarCloud source path ([0855def](https://github.com/timoa/secure-go-backend-clean-architecture/commit/0855def8e45914d2bc85ae1da169f2c5e728a1c1))
+* **cicd:** specify GitHub token to use for scorecard ([fabdaa5](https://github.com/timoa/secure-go-backend-clean-architecture/commit/fabdaa56a36935a0e08c790c31ee8a0302e9178d))
+* **project:** fix staticcheck issues ([de54f32](https://github.com/timoa/secure-go-backend-clean-architecture/commit/de54f32993eb2d689982247d5c4a0241edec4a5d))
+
 ## [1.0.2](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.1...v1.0.2) (2023-01-13)
 
 
