@@ -1,9 +1,9 @@
 name: Code Review
 
-permissions:
-  contents: read
-
 on: [pull_request]
+
+# Declare default permissions as read only.
+permissions: read-all
 
 jobs:
 
