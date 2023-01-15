@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.6...v1.0.7) (2023-01-15)
+
+
+### Bug Fixes
+
+* **cicd:** add test coverage ([b229e70](https://github.com/timoa/secure-go-backend-clean-architecture/commit/b229e70f9f83fd5a678357ad3bb9a406c4bc68a6))
+
 ## [1.0.6](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.5...v1.0.6) (2023-01-14)
 
 
