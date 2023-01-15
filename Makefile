@@ -4,7 +4,7 @@ docker-build:
 	docker-compose build
 
 go-test:
-	go test ./...
+	go test -cover -coverprofile=coverage.out ./...
 
 go-build: go-fmt go-get
 	go build -o bin/main cmd/main.go

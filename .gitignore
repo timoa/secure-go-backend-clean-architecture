@@ -4,3 +4,4 @@ bin/
 .idea
 .env
 .vscode
+coverage.out
