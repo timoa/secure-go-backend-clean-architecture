@@ -67,7 +67,6 @@ jobs:
         uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # tag=v3.0.1
         with:
           name: code-coverage
-          path: coverage.out
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
