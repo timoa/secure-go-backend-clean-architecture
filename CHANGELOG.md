@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.7...v1.0.8) (2023-01-16)
+
+
+### Bug Fixes
+
+* **cicd:** remove path arg for code coverage download ([75cd3f0](https://github.com/timoa/secure-go-backend-clean-architecture/commit/75cd3f02361d756acb9d28e51580180c683674c6))
+
 ## [1.0.7](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.6...v1.0.7) (2023-01-15)
 
 
