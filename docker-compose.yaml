@@ -15,7 +15,7 @@ services:
       - mongodb
 
   mongodb:
-    image: mongo:6.0@sha256:db616c3ceb0a82837d8ad6382ee93aff4fae89f9b7ad37b3e6c07f35f1559345
+    image: mongo:6.0@sha256:5b3815ec21a1dfd9f216ee83b324a0a779e1dfd17892e2f858e3c571f5980561
     container_name: mongodb
     restart: unless-stopped
     env_file: .env
