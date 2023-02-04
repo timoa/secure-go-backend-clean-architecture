@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.9...v1.0.10) (2023-02-04)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/spf13/viper to v1.15.0 ([d84220d](https://github.com/timoa/secure-go-backend-clean-architecture/commit/d84220df3b82ff59d01bb16110cc1fb241ab11d6))
+
 ## [1.0.9](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.8...v1.0.9) (2023-01-20)
 
 
