@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.10...v1.0.11) (2023-02-19)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/golang-jwt/jwt/v4 to v4.5.0 ([fbae54a](https://github.com/timoa/secure-go-backend-clean-architecture/commit/fbae54abd1e1f769d4167eaa05344bade83e6e4d))
+
 ## [1.0.10](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.9...v1.0.10) (2023-02-04)
 
 
