@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.15...v1.0.16) (2023-03-20)
+
+
+### Bug Fixes
+
+* **deps:** update module golang.org/x/crypto to v0.7.0 ([07df36d](https://github.com/timoa/secure-go-backend-clean-architecture/commit/07df36dc25495de6a91cc9489879f682e407d349))
+
 ## [1.0.15](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.14...v1.0.15) (2023-03-14)
 
 
