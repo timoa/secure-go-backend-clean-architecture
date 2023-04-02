@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.16...v1.0.17) (2023-04-02)
+
+
+### Bug Fixes
+
+* **deps:** update module go.mongodb.org/mongo-driver to v1.11.3 ([b2234e0](https://github.com/timoa/secure-go-backend-clean-architecture/commit/b2234e0df2aa5d451fcb7a350afa38d14c509226))
+
 ## [1.0.16](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.15...v1.0.16) (2023-03-20)
 
 
