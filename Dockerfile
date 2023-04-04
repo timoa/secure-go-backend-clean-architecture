@@ -1,4 +1,4 @@
-FROM golang:1.20-alpine@sha256:576da1aa73f8ffa3dc6a7577b6032bd834aa84f2e1714d3e7e96b06b49f4e177
+FROM golang:1.20-alpine@sha256:87734b78d26a52260f303cf1b40df45b0797f972bd0250e56937c42114bf472c
 
 # Create folder /app and non-privileged user as root
 RUN mkdir /app && \
