@@ -35,7 +35,7 @@ jobs:
 
       # Run staticcheck
       - name: Run Staticcheck
-        uses: reviewdog/action-staticcheck@75d665b37ecc3fe9eac9a0dcb9b58f3586e00d6e # v1.10.1
+        uses: reviewdog/action-staticcheck@a7aa1d4d70d9d20bba4918cd7e8a73e963fd6851 # tag=v1.10.0
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
