@@ -13,7 +13,7 @@
   "assignees": [
     "timoa"
   ],
-  "dependencyDashboardTitle" : "Renovate(bot) : dependency dashboard",
+  "dependencyDashboardTitle": "Renovate(bot) : dependency dashboard",
   "packageRules": [
     {
       "description": "Automerge renovate minor and patch updates",
@@ -33,7 +33,7 @@
         "renovate/renovate"
       ],
       "separateMinorPatch": true,
-      "stabilityDays": 15
+      "minimumReleaseAge": "15 days"
     }
   ]
 }
