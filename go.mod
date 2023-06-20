@@ -6,7 +6,7 @@ require (
 	github.com/gin-gonic/gin v1.9.0
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/spf13/viper v1.16.0
-	github.com/stretchr/testify v1.8.3
+	github.com/stretchr/testify v1.8.4
 	go.mongodb.org/mongo-driver v1.11.6
 	golang.org/x/crypto v0.9.0
 )
