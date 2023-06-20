@@ -57,7 +57,7 @@ jobs:
         uses: actions/checkout@83b7061638ee4956cf7545a6f7efe594e5ad0247 # v3.5.1
 
       - name: Run Hadolint
-        uses: reviewdog/action-hadolint@1b070701bee7438c450558821fe54b0b5888ad3d # v1.34.0
+        uses: reviewdog/action-hadolint@141ffd8d2f0b75e6fc7c87341331985448b62aa4 # v1.34.1
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
