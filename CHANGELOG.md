@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.22...v1.0.23) (2023-06-20)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/stretchr/testify to v1.8.4 ([aa565b1](https://github.com/timoa/secure-go-backend-clean-architecture/commit/aa565b157036a4ebddc8e08891c6679be4f840b7))
+
 ## [1.0.22](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.21...v1.0.22) (2023-06-20)
 
 
