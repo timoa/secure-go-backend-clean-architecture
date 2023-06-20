@@ -1,3 +1,10 @@
+## [1.0.24](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.23...v1.0.24) (2023-06-20)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/gin-gonic/gin to v1.9.1 [security] ([#96](https://github.com/timoa/secure-go-backend-clean-architecture/issues/96)) ([1a63211](https://github.com/timoa/secure-go-backend-clean-architecture/commit/1a6321180d602b00b03183fad98f88b504a70161))
+
 ## [1.0.23](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.22...v1.0.23) (2023-06-20)
 
 
