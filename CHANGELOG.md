@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.28...v1.0.29) (2025-12-15)
+
+
+### Bug Fixes
+
+* **cicd:** fix the code-review with the right version for Staticcheck ([7e3a3f6](https://github.com/timoa/secure-go-backend-clean-architecture/commit/7e3a3f67d542bd8c98328e82d73d1186f180bf84))
+
 ## [1.0.28](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.27...v1.0.28) (2025-12-15)
 
 
