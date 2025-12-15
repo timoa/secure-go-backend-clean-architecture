@@ -14,16 +14,16 @@ jobs:
 
     steps:
       - name: Harden GitHub Actions Runner
-        uses: step-security/harden-runner@97689868c8aca5a4bcd16ab96bbda25a0efb734b
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
       - name: Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        uses: actions/checkout@v6.0.1
 
       # Setup Go & Build
       - name: Setup Go
-        uses: actions/setup-go@6edd4406fa81c3da01a34fa6f6343087c207a568 # v3.5.0
+        uses: actions/setup-go@v6.0.0
         with:
           go-version-file: 'go.mod'
           check-latest: true
@@ -35,7 +35,7 @@ jobs:
 
       # Run staticcheck
       - name: Run Staticcheck
-        uses: reviewdog/action-staticcheck@75c225cce02a2edc754d498cc354716f7f373d0a # v1.11.1
+        uses: reviewdog/action-staticcheck@v1.2.8
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
@@ -49,15 +49,15 @@ jobs:
 
     steps:
       - name: Harden GitHub Actions Runner
-        uses: step-security/harden-runner@97689868c8aca5a4bcd16ab96bbda25a0efb734b
+        uses: step-security/harden-runner@v2.14.0
         with:
           egress-policy: audit
 
       - name: Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        uses: actions/checkout@v6.0.1
 
       - name: Run Hadolint
-        uses: reviewdog/action-hadolint@7bd0800b7ce35c6d644cde762174e69f18896973 # v1.35.0
+        uses: reviewdog/action-hadolint@v1.50.2
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
