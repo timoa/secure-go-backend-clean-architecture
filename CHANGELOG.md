@@ -1,3 +1,15 @@
+## [1.0.28](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.27...v1.0.28) (2025-12-15)
+
+
+### Bug Fixes
+
+* **cicd:** add missing URL for Harden Runner ([b1edf40](https://github.com/timoa/secure-go-backend-clean-architecture/commit/b1edf4029400c3b2beccae9db1b63cf7a45e6052))
+* **cicd:** add missing URL to allow ([f89142b](https://github.com/timoa/secure-go-backend-clean-architecture/commit/f89142b9531f6833a480393f8ee746f44e20bd43))
+* **cicd:** update all the GitHub Actions ([9ba4bcc](https://github.com/timoa/secure-go-backend-clean-architecture/commit/9ba4bcc5e0d5fc2be5b0cb3067333b23078d30a6))
+* **cicd:** update the GitHub Actions Harden Runner to v2.14.0 ([0d66cdc](https://github.com/timoa/secure-go-backend-clean-architecture/commit/0d66cdc62fd4366842e0fcb258d6eb72ce883cc6))
+* **cicd:** update the SonarQube Github Actions ([be4278a](https://github.com/timoa/secure-go-backend-clean-architecture/commit/be4278a86328ad7219dd686b53406336388c2260))
+* **cicd:** update upload-artifact to v6.0.0 ([c29e8f3](https://github.com/timoa/secure-go-backend-clean-architecture/commit/c29e8f3d9dd02a688216b31426afea27d9993677))
+
 ## [1.0.27](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.26...v1.0.27) (2023-08-07)
 
 
