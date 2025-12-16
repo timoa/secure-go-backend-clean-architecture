@@ -16,13 +16,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func setUserID(userID string) gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Set("x-user-id", userID)
-		c.Next()
-	}
-}
-
 func TestFetch(t *testing.T) {
 
 	t.Run("success", func(t *testing.T) {
