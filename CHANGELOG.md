@@ -1,3 +1,11 @@
+## [1.0.33](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.32...v1.0.33) (2025-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update module go.mongodb.org/mongo-driver to v1.11.9 ([7c70cb1](https://github.com/timoa/secure-go-backend-clean-architecture/commit/7c70cb1e607017297d8788e5276ae4195add353f))
+* **deps:** update module golang.org/x/crypto to v0.45.0 [security] ([c5ec20a](https://github.com/timoa/secure-go-backend-clean-architecture/commit/c5ec20a0ae76aad41a031f58c23fcba06bd73506))
+
 ## [1.0.32](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.31...v1.0.32) (2025-12-16)
 
 
