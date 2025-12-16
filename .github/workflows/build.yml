@@ -28,6 +28,7 @@ jobs:
             release-assets.githubusercontent.com:443
             releases.bazel.build:443
             bcr.bazel.build:443
+            go.dev:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
@@ -128,6 +129,7 @@ jobs:
             release-assets.githubusercontent.com:443
             releases.bazel.build:443
             bcr.bazel.build:443
+            go.dev:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
