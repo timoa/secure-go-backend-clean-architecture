@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "bootstrap",
+    srcs = [
+        "app.go",
+        "database.go",
+        "env.go",
+    ],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/bootstrap",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//mongo",
+        "@com_github_spf13_viper//:viper",
+    ],
+)

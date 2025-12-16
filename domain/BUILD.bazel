@@ -1,0 +1,22 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "domain",
+    srcs = [
+        "error_response.go",
+        "jwt_custom.go",
+        "login.go",
+        "profile.go",
+        "refresh_token.go",
+        "signup.go",
+        "success_response.go",
+        "task.go",
+        "user.go",
+    ],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/domain",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_golang_jwt_jwt_v4//:jwt",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

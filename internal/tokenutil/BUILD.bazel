@@ -1,0 +1,24 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "tokenutil",
+    srcs = ["tokenutil.go"],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/tokenutil",
+    visibility = ["//:__subpackages__"],
+    deps = [
+        "//domain",
+        "@com_github_golang_jwt_jwt_v4//:jwt",
+    ],
+)
+
+go_test(
+    name = "tokenutil_test",
+    srcs = ["tokenutil_test.go"],
+    deps = [
+        ":tokenutil",
+        "//domain",
+        "@com_github_golang_jwt_jwt_v4//:jwt",
+        "@com_github_stretchr_testify//assert",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

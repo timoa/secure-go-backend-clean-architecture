@@ -1,0 +1,5 @@
+load("@gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/amitshekhariitbhu/go-backend-clean-architecture
+
+gazelle(name = "gazelle")

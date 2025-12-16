@@ -1,0 +1,13 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "mongo",
+    srcs = ["mongo.go"],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@org_mongodb_go_mongo_driver//mongo",
+        "@org_mongodb_go_mongo_driver//mongo/options",
+        "@org_mongodb_go_mongo_driver//mongo/readpref",
+    ],
+)

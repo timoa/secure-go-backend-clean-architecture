@@ -1,0 +1,26 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "middleware",
+    srcs = ["jwt_auth_middleware.go"],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/api/middleware",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//domain",
+        "//internal/tokenutil",
+        "@com_github_gin_gonic_gin//:gin",
+    ],
+)
+
+go_test(
+    name = "middleware_test",
+    srcs = ["jwt_auth_middleware_test.go"],
+    deps = [
+        ":middleware",
+        "//domain",
+        "//internal/tokenutil",
+        "@com_github_gin_gonic_gin//:gin",
+        "@com_github_stretchr_testify//assert",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

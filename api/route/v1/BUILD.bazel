@@ -1,0 +1,25 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "route",
+    srcs = [
+        "login_route.go",
+        "profile_route.go",
+        "refresh_token_route.go",
+        "route.go",
+        "signup_route.go",
+        "task_route.go",
+    ],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/api/route/v1",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//api/controller",
+        "//api/middleware",
+        "//bootstrap",
+        "//domain",
+        "//mongo",
+        "//repository",
+        "//usecase",
+        "@com_github_gin_gonic_gin//:gin",
+    ],
+)

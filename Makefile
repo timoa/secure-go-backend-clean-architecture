@@ -1,25 +1,27 @@
-build: go-build docker-build
+build: bazel-build docker-build
+
+bazel-build:
+	bazelisk build //cmd:main
+
+test: bazel-test
+
+bazel-test:
+	bazelisk test //...
+
+coverage:
+	go test -cover -coverprofile=coverage.out ./...
+
+gazelle:
+	bazelisk run //:gazelle
 
 docker-build:
 	docker-compose build
-
-go-test:
-	go test -cover -coverprofile=coverage.out ./...
-
-go-build: go-fmt go-get
-	go build -o bin/main cmd/main.go
-
-go-fmt:
-	go fmt ./...
-
-go-get:
-	go get ./...
 
 # Onboarding
 onboarding: install-deps-macos setup
 
 install-deps-macos:
-	brew install pre-commit hadolint checkov gosec
+	brew install pre-commit hadolint checkov gosec bazelisk
 
 setup:
 	pre-commit install

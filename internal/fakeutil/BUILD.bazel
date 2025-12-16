@@ -1,0 +1,8 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "fakeutil",
+    srcs = ["fakeutil.go"],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/fakeutil",
+    visibility = ["//:__subpackages__"],
+)
