@@ -1,3 +1,10 @@
+## [1.0.32](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.31...v1.0.32) (2025-12-16)
+
+
+### Bug Fixes
+
+* **go:** update golang to v1.23.x ([96c5e70](https://github.com/timoa/secure-go-backend-clean-architecture/commit/96c5e70a0d978076d9f6082585fde8d15051e29c))
+
 ## [1.0.31](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.30...v1.0.31) (2025-12-16)
 
 
