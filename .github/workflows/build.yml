@@ -26,6 +26,7 @@ jobs:
             storage.googleapis.com:443
             sum.golang.org:443
             release-assets.githubusercontent.com:443
+            releases.bazel.build:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
@@ -124,6 +125,7 @@ jobs:
             storage.googleapis.com:443
             sum.golang.org:443
             release-assets.githubusercontent.com:443
+            releases.bazel.build:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
