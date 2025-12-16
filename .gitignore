@@ -5,3 +5,7 @@ bin/
 .env
 .vscode
 coverage.out
+/bazel-*
+/bazel-bin
+/bazel-out
+/bazel-testlogs
