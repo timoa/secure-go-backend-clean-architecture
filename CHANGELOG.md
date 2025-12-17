@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.0...v1.1.1) (2025-12-17)
+
+
+### Bug Fixes
+
+* **doc:** add links to the tools used in the repo ([6e15fde](https://github.com/timoa/secure-go-backend-clean-architecture/commit/6e15fdeea28d5fe111cd01ca897f984bc8304807))
+
 # [1.1.0](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.33...v1.1.0) (2025-12-17)
 
 
