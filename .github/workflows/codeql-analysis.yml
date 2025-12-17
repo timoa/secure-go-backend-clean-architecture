@@ -45,10 +45,24 @@ jobs:
         # with:
         #   languages: go, javascript, csharp, python, cpp, java, ruby
 
-      # Autobuild attempts to build any compiled languages (C/C++, C#, Go, or Java).
-      # If this step fails, then you should remove it and run the build manually (see below).
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@b8d3b6e8af63cde30bdc382c0bc28114f4346c88 # v2.28.1
+      - name: Setup Bazelisk
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o "$HOME/.local/bin/bazelisk" https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64
+          chmod +x "$HOME/.local/bin/bazelisk"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Bazel Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('.bazelversion', 'MODULE.bazel', 'MODULE.bazel.lock', 'go.mod', 'go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-
+
+      - name: Build app (Bazel)
+        run: bazelisk build //cmd:main
 
       # ℹ️ Command-line programs to run using the OS shell.
       # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun

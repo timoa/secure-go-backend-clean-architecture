@@ -1,0 +1,20 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "mocks",
+    srcs = [
+        "LoginUsecase.go",
+        "ProfileUsecase.go",
+        "RefreshTokenUsecase.go",
+        "SignupUsecase.go",
+        "TaskRepository.go",
+        "TaskUsecase.go",
+        "UserRepository.go",
+    ],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/domain/mocks",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//domain",
+        "@com_github_stretchr_testify//mock",
+    ],
+)

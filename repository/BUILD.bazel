@@ -1,0 +1,34 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "repository",
+    srcs = [
+        "task_repository.go",
+        "user_repository.go",
+    ],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/repository",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//domain",
+        "//mongo",
+        "@org_mongodb_go_mongo_driver//bson",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+        "@org_mongodb_go_mongo_driver//mongo/options",
+    ],
+)
+
+go_test(
+    name = "repository_test",
+    srcs = [
+        "task_repository_test.go",
+        "user_repository_test.go",
+    ],
+    deps = [
+        ":repository",
+        "//domain",
+        "//mongo/mocks",
+        "@com_github_stretchr_testify//assert",
+        "@com_github_stretchr_testify//mock",
+        "@org_mongodb_go_mongo_driver//bson/primitive",
+    ],
+)

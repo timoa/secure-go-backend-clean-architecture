@@ -26,22 +26,45 @@ jobs:
             storage.googleapis.com:443
             sum.golang.org:443
             release-assets.githubusercontent.com:443
+            releases.bazel.build:443
+            bcr.bazel.build:443
+            go.dev:443
+            dl.google.com:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
 
-      - name: Setup Go
+      - name: Setup Bazelisk
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o "$HOME/.local/bin/bazelisk" https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64
+          chmod +x "$HOME/.local/bin/bazelisk"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Bazel Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('.bazelversion', 'MODULE.bazel', 'MODULE.bazel.lock', 'go.mod', 'go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-
+
+      - name: Build the app (Bazel)
+        run: bazelisk build //cmd:main
+
+      - name: Run the tests (Bazel)
+        run: bazelisk test //...
+
+      - name: Setup Go (coverage only)
         uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version-file: 'go.mod'
           check-latest: true
           cache: true
 
-      - name: Build the Go app
-        run: make go-build
-      
-      - name: Run the tests
-        run: make go-test
+      - name: Generate Go coverage.out (SonarCloud)
+        run: make coverage
       
       - name: Save Code Coverage
         uses: actions/upload-artifact@v6.0.0
@@ -105,19 +128,32 @@ jobs:
             storage.googleapis.com:443
             sum.golang.org:443
             release-assets.githubusercontent.com:443
+            releases.bazel.build:443
+            bcr.bazel.build:443
+            go.dev:443
+            dl.google.com:443
 
       - name: Checkout
         uses: actions/checkout@v6.0.1
 
-      - name: Setup Go
-        uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
-        with:
-          go-version-file: 'go.mod'
-          check-latest: true
-          cache: true
+      - name: Setup Bazelisk
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o "$HOME/.local/bin/bazelisk" https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64
+          chmod +x "$HOME/.local/bin/bazelisk"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Build Go app
-        run: make go-build
+      - name: Bazel Cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('.bazelversion', 'MODULE.bazel', 'MODULE.bazel.lock', 'go.mod', 'go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-
+
+      - name: Build app (Bazel)
+        run: bazelisk build //cmd:main
 
       - name: Perform Scan
         uses: ShiftLeftSecurity/scan-action@master

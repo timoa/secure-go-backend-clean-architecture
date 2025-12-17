@@ -1,21 +1,37 @@
-FROM golang:1.23-alpine
+FROM alpine:3.21 AS builder
 
-# Create folder /app and non-privileged user as root
-RUN mkdir /app && \
-    adduser -S app-user
+RUN apk add --no-cache \
+    bash=5.2.37-r0 \
+    ca-certificates=20250911-r0 \
+    curl=8.14.1-r2 \
+    git=2.47.3-r0
 
-# Copy the project to the /app folder
-COPY . /app
-
-# Set the current folder as /app
 WORKDIR /app
+COPY .bazelrc .bazelversion BUILD.bazel MODULE.bazel MODULE.bazel.lock go.mod go.sum ./
+COPY api ./api
+COPY bootstrap ./bootstrap
+COPY cmd ./cmd
+COPY domain ./domain
+COPY internal ./internal
+COPY mongo ./mongo
+COPY repository ./repository
+COPY usecase ./usecase
 
-# Build the app
-RUN go build -o main cmd/main.go && \
-    chown -R app-user /app
+# Install bazelisk (respects .bazelversion)
+RUN curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o /usr/local/bin/bazelisk https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64 && \
+    chmod +x /usr/local/bin/bazelisk
 
-# Use the non-privileged user for next actions
+# Build the binary using Bazel
+RUN bazelisk build //cmd:main
+
+FROM alpine:3.21
+
+RUN adduser -S app-user
+
+WORKDIR /app
+COPY --from=builder /app/bazel-bin/cmd/main /app/main
+RUN chown -R app-user /app
+
 USER app-user
 
-# Set the entrypoint
 CMD ["/app/main"]

@@ -1,0 +1,22 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+# gazelle:prefix github.com/amitshekhariitbhu/go-backend-clean-architecture
+
+go_library(
+    name = "cmd_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/cmd",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//api/route/v1:route",
+        "//bootstrap",
+        "@com_github_gin_gonic_gin//:gin",
+    ],
+)
+
+go_binary(
+    name = "main",
+    out = "main",
+    embed = [":cmd_lib"],
+    visibility = ["//visibility:public"],
+)
