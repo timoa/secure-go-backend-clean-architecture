@@ -7,7 +7,15 @@ RUN apk add --no-cache \
     git=2.47.3-r0
 
 WORKDIR /app
-COPY . .
+COPY .bazelrc .bazelversion BUILD.bazel MODULE.bazel MODULE.bazel.lock go.mod go.sum ./
+COPY api ./api
+COPY bootstrap ./bootstrap
+COPY cmd ./cmd
+COPY domain ./domain
+COPY internal ./internal
+COPY mongo ./mongo
+COPY repository ./repository
+COPY usecase ./usecase
 
 # Install bazelisk (respects .bazelversion)
 RUN curl -L -o /usr/local/bin/bazelisk https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64 && \
