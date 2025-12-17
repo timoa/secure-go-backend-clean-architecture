@@ -1,4 +1,4 @@
-# Go Backend Clean Architecture with DevSecOps best practices (WIP)
+# Go Backend Clean Architecture with DevSecOps best practices
 
 [![Latest Release][release-badge]][release-url]
 [![Build Status][github-badge]][github-url]
@@ -60,6 +60,42 @@ This repository is intentionally configured with a security-focused CI/CD pipeli
 - **Release automation ([semantic-release][semantic-release-url])**
   - Automated versioning and release preparation on `main`.
   - Workflow: `.github/workflows/build.yml` (job `pre-release`).
+
+## Makefile commands
+
+Common local commands for contributors:
+
+- **Install local tooling & git hooks (macOS)**
+  - `make onboarding`
+  - Installs required tools via Homebrew (including `pre-commit`, `hadolint`, `checkov`, `gosec`, `bazelisk`) and sets up git hooks.
+
+- **Build**
+  - `make build`
+  - Runs `bazel-build` and `docker-build`.
+
+- **Build (Bazel)**
+  - `make bazel-build`
+  - Builds `//cmd:main` with Bazel.
+
+- **Test (Bazel)**
+  - `make test` (alias of `make bazel-test`)
+  - Runs the full Bazel test suite.
+
+- **Coverage (Go)**
+  - `make coverage`
+  - Generates `coverage.out` (used by SonarCloud).
+
+- **Update Bazel BUILD files (Gazelle)**
+  - `make gazelle`
+  - Runs Gazelle to keep Bazel build files in sync.
+
+- **Docker build**
+  - `make docker-build`
+  - Builds Docker images via `docker-compose`.
+
+- **Run all pre-commit checks**
+  - `make code-check`
+  - Runs `pre-commit` hooks against all files.
 
 ## Details on the project used to demonstrate the DevSecOps best practices
 
