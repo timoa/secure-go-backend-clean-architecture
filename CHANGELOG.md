@@ -1,3 +1,25 @@
+# [1.1.0](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.33...v1.1.0) (2025-12-17)
+
+
+### Bug Fixes
+
+* **cicd:** add missing Bazel build URL ([7075b35](https://github.com/timoa/secure-go-backend-clean-architecture/commit/7075b35305a7f8d319979f659f67fbc373290c10))
+* **cicd:** add missing dl.google.com URL ([a0be258](https://github.com/timoa/secure-go-backend-clean-architecture/commit/a0be2585bab4ed7426fb7e467d0fc6ccb6bbb7d1))
+* **cicd:** add missing go.dev:443 URL ([313a72f](https://github.com/timoa/secure-go-backend-clean-architecture/commit/313a72f7b90f90f20e040a571f76a079c897ef28))
+* **cicd:** add missing URL for Harden Runner + missing install command ([4d8905c](https://github.com/timoa/secure-go-backend-clean-architecture/commit/4d8905cdd78f34935d2aa50ee956bf36aa71b3ff))
+* **cicd:** fix the Bazel install path ([14de0b3](https://github.com/timoa/secure-go-backend-clean-architecture/commit/14de0b3c47b9164ac83396e21622fa87251ff2d1))
+* **cicd:** fix the SonarQube githubactions:S6506 issue ([92122c6](https://github.com/timoa/secure-go-backend-clean-architecture/commit/92122c65722d864463120e715dbbca7b5a15aedf))
+* **docker:** fix SonarQube docker:S6470 ([4222057](https://github.com/timoa/secure-go-backend-clean-architecture/commit/4222057e3416bd27f5f19d7d2bbe1ca756d027fc))
+* **docker:** fix the Hadolint DL3018 issue ([fdb0b17](https://github.com/timoa/secure-go-backend-clean-architecture/commit/fdb0b17f2ba0ea38247b62ff997fc83352e88ef0))
+* **docker:** fix the SonarQube docker:S6506 issue ([be6f0cc](https://github.com/timoa/secure-go-backend-clean-architecture/commit/be6f0cc8742609051ca24bc77a1a1aa7942e9c75))
+* **doc:** update the README with the list of security and automation ([bbd9279](https://github.com/timoa/secure-go-backend-clean-architecture/commit/bbd92799541ae37b37c4aee9d1f98f2091b1d5b1))
+* **project:** update the .gitignore for Bazel integration ([00c89a6](https://github.com/timoa/secure-go-backend-clean-architecture/commit/00c89a60c8dee0732d97c0e74038b68c39c20fbb))
+
+
+### Features
+
+* **project:** add Bazel build support ([28451f3](https://github.com/timoa/secure-go-backend-clean-architecture/commit/28451f35d4c55f25c6d1f5116c3283c620014732))
+
 ## [1.0.33](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.0.32...v1.0.33) (2025-12-16)
 
 
