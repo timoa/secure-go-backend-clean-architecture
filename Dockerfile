@@ -18,7 +18,7 @@ COPY repository ./repository
 COPY usecase ./usecase
 
 # Install bazelisk (respects .bazelversion)
-RUN curl -L -o /usr/local/bin/bazelisk https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64 && \
+RUN curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o /usr/local/bin/bazelisk https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-amd64 && \
     chmod +x /usr/local/bin/bazelisk
 
 # Build the binary using Bazel
