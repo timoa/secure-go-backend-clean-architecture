@@ -22,42 +22,42 @@ The goal is to demonstrate the best practices to maintain automatically a GO pro
 
 This repository is intentionally configured with a security-focused CI/CD pipeline and automation defaults.
 
-- **Dependency updates (Renovate)**
+- **Dependency updates ([Renovate][renovate-url])**
   - Automated dependency update PRs with a dependency dashboard and security labeling.
   - Config: `.github/renovate.json`.
 
-- **Reproducible builds & tests (Bazel / Bazelisk)**
+- **Reproducible builds & tests ([Bazel][bazel-url])**
   - CI builds and runs tests via Bazel for consistent, hermetic-ish builds.
   - Workflows use Bazel caching to speed up CI.
   - Workflows: `.github/workflows/build.yml`, `.github/workflows/codeql-analysis.yml`.
 
-- **Code quality gates (SonarCloud)**
+- **Code quality gates ([SonarCloud][sonarcloud-url])**
   - Quality gate, coverage ingestion, and maintainability/security metrics.
   - Coverage is generated as `coverage.out` and uploaded between jobs.
   - Config: `sonar-project.properties`.
   - Workflow: `.github/workflows/build.yml` (job `code-quality`).
 
-- **SAST / vulnerability scanning (SCAN)**
+- **SAST / vulnerability scanning ([SCAN][scan-url])**
   - Static application security testing is run in CI and can annotate pull requests.
   - Workflow: `.github/workflows/build.yml` (job `code-security`).
 
-- **Code scanning (GitHub CodeQL)**
+- **Code scanning ([GitHub CodeQL][codeql-url])**
   - Scheduled and PR-based CodeQL analysis with results uploaded to GitHub code scanning.
   - Workflow: `.github/workflows/codeql-analysis.yml`.
 
-- **Supply-chain / repo hygiene (OpenSSF Scorecard)**
+- **Supply-chain / repo hygiene ([OpenSSF Scorecard][scorecard-url])**
   - Periodic and branch-protection-triggered Scorecard runs, uploaded as SARIF.
   - Workflow: `.github/workflows/scorecard.yml`.
 
-- **PR feedback automation (Reviewdog: Staticcheck + Hadolint)**
+- **PR feedback automation ([Reviewdog][reviewdog-url]: Staticcheck + [Hadolint][hadolint-url])**
   - Go linting via `staticcheck` and Dockerfile linting via `hadolint`, reported directly on PRs.
   - Workflow: `.github/workflows/code-review.yml`.
 
-- **GitHub Actions hardening**
+- **GitHub Actions hardening ([Harden Runner][harden-runner-url])**
   - Workflows use `step-security/harden-runner` to reduce or audit outbound network access.
   - Workflows: `.github/workflows/build.yml`, `.github/workflows/code-review.yml`.
 
-- **Release automation (semantic-release)**
+- **Release automation ([semantic-release][semantic-release-url])**
   - Automated versioning and release preparation on `main`.
   - Workflow: `.github/workflows/build.yml` (job `pre-release`).
 
@@ -82,3 +82,12 @@ More details can be found on the following GitHub repository: [go-backend-clean-
 [sonarcloud-duplicated-badge]: https://sonarcloud.io/api/project_badges/measure?project=timoa_secure-go-backend-clean-architecture&metric=duplicated_lines_density
 [badge-license]: https://img.shields.io/badge/License-Apache2-blue.svg
 [link-license]: https://raw.githubusercontent.com/timoa/secure-go-backend-clean-architecture/master/LICENSE
+[renovate-url]: https://github.com/renovatebot/renovate
+[bazel-url]: https://bazel.build
+[scan-url]: https://github.com/ShiftLeftSecurity/sast-scan
+[reviewdog-url]: https://github.com/reviewdog/reviewdog
+[harden-runner-url]: https://github.com/step-security/harden-runner
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
+[hadolint-url]: https://github.com/hadolint/hadolint
+[scorecard-url]: https://github.com/ossf/scorecard
+[codeql-url]: https://github.com/github/codeql-action
