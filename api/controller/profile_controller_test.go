@@ -13,7 +13,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestFetch(t *testing.T) {
@@ -24,7 +24,7 @@ func TestFetch(t *testing.T) {
 			Email: "test@gmail.com",
 		}
 
-		userObjectID := primitive.NewObjectID()
+		userObjectID := bson.NewObjectID()
 		userID := userObjectID.Hex()
 
 		mockProfileUsecase := new(mocks.ProfileUsecase)
@@ -58,7 +58,7 @@ func TestFetch(t *testing.T) {
 	})
 
 	t.Run("error", func(t *testing.T) {
-		userObjectID := primitive.NewObjectID()
+		userObjectID := bson.NewObjectID()
 		userID := userObjectID.Hex()
 
 		mockProfileUsecase := new(mocks.ProfileUsecase)

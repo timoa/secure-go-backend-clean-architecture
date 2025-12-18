@@ -29,7 +29,11 @@ repos:
       - id: go-fmt
       - id: go-fmt-repo
       - id: go-vet
+        pass_filenames: false
+        args: ["./..."]
       - id: go-vet-mod
+        pass_filenames: false
+        args: ["./..."]
       - id: go-vet-repo-mod
       # - id: go-sec-mod # Need to investigate the code to understand what is wrong
       # - id: go-sec-pkg # Need to investigate the code to understand what is wrong

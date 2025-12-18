@@ -15,7 +15,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -32,7 +32,7 @@ func TestLoginController_Login(t *testing.T) {
 	hashed, err := bcrypt.GenerateFromPassword([]byte("password"), bcrypt.DefaultCost)
 	assert.NoError(t, err)
 
-	user := domain.User{ID: primitive.NewObjectID(), Name: "Test", Email: "test@example.com", Password: string(hashed)}
+	user := domain.User{ID: bson.NewObjectID(), Name: "Test", Email: "test@example.com", Password: string(hashed)}
 
 	t.Run("success", func(t *testing.T) {
 		mockLoginUsecase := new(mocks.LoginUsecase)

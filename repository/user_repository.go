@@ -5,9 +5,8 @@ import (
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/v2/bson"
+	"go.mongodb.org/mongo-driver/v2/mongo/options"
 )
 
 type userRepository struct {
@@ -33,7 +32,7 @@ func (ur *userRepository) Create(c context.Context, user *domain.User) error {
 func (ur *userRepository) Fetch(c context.Context) ([]domain.User, error) {
 	collection := ur.database.Collection(ur.collection)
 
-	opts := options.Find().SetProjection(bson.D{{Key: "password", Value: 0}})
+	opts := options.Find().SetProjection(bson.D{bson.E{Key: "password", Value: 0}})
 	cursor, err := collection.Find(c, bson.D{}, opts)
 
 	if err != nil {
@@ -62,7 +61,7 @@ func (ur *userRepository) GetByID(c context.Context, id string) (domain.User, er
 
 	var user domain.User
 
-	idHex, err := primitive.ObjectIDFromHex(id)
+	idHex, err := bson.ObjectIDFromHex(id)
 	if err != nil {
 		return user, err
 	}

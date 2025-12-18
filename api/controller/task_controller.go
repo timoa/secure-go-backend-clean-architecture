@@ -5,7 +5,7 @@ import (
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/gin-gonic/gin"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 type TaskController struct {
@@ -22,9 +22,9 @@ func (tc *TaskController) Create(c *gin.Context) {
 	}
 
 	userID := c.GetString("x-user-id")
-	task.ID = primitive.NewObjectID()
+	task.ID = bson.NewObjectID()
 
-	task.UserID, err = primitive.ObjectIDFromHex(userID)
+	task.UserID, err = bson.ObjectIDFromHex(userID)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, domain.ErrorResponse{Message: err.Error()})
 		return

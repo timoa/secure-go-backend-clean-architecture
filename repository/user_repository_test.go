@@ -10,7 +10,7 @@ import (
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/repository"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestCreate(t *testing.T) {
@@ -24,14 +24,14 @@ func TestCreate(t *testing.T) {
 	collectionName := domain.CollectionUser
 
 	mockUser := &domain.User{
-		ID:       primitive.NewObjectID(),
+		ID:       bson.NewObjectID(),
 		Name:     "Test",
 		Email:    "test@gmail.com",
 		Password: "password",
 	}
 
 	mockEmptyUser := &domain.User{}
-	mockUserID := primitive.NewObjectID()
+	mockUserID := bson.NewObjectID()
 
 	t.Run("success", func(t *testing.T) {
 

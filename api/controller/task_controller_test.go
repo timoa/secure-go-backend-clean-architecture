@@ -14,13 +14,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestTaskController_Create(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 
-	userID := primitive.NewObjectID().Hex()
+	userID := bson.NewObjectID().Hex()
 
 	t.Run("success", func(t *testing.T) {
 		mockUsecase := new(mocks.TaskUsecase)
@@ -97,7 +97,7 @@ func TestTaskController_Create(t *testing.T) {
 func TestTaskController_Fetch(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 
-	userID := primitive.NewObjectID().Hex()
+	userID := bson.NewObjectID().Hex()
 
 	t.Run("success", func(t *testing.T) {
 		mockUsecase := new(mocks.TaskUsecase)

@@ -11,14 +11,14 @@ import (
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/tokenutil"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestJwtAuthMiddleware(t *testing.T) {
 	gin.SetMode(gin.TestMode)
 
 	secret := "access-secret"
-	userObjectID := primitive.NewObjectID()
+	userObjectID := bson.NewObjectID()
 	userID := userObjectID.Hex()
 
 	accessToken, err := tokenutil.CreateAccessToken(&domain.User{ID: userObjectID, Name: "Test"}, secret, 1)

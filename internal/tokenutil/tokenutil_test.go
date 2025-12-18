@@ -9,11 +9,11 @@ import (
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/tokenutil"
 	jwt "github.com/golang-jwt/jwt/v4"
 	"github.com/stretchr/testify/assert"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestCreateAccessTokenAndExtractIDFromToken(t *testing.T) {
-	user := &domain.User{ID: primitive.NewObjectID(), Name: "Test"}
+	user := &domain.User{ID: bson.NewObjectID(), Name: "Test"}
 	secret := "secret"
 
 	token, err := tokenutil.CreateAccessToken(user, secret, 1)
@@ -26,7 +26,7 @@ func TestCreateAccessTokenAndExtractIDFromToken(t *testing.T) {
 }
 
 func TestCreateRefreshTokenAndExtractIDFromToken(t *testing.T) {
-	user := &domain.User{ID: primitive.NewObjectID(), Name: "Test"}
+	user := &domain.User{ID: bson.NewObjectID(), Name: "Test"}
 	secret := "refresh-secret"
 
 	token, err := tokenutil.CreateRefreshToken(user, secret, 1)
@@ -39,7 +39,7 @@ func TestCreateRefreshTokenAndExtractIDFromToken(t *testing.T) {
 }
 
 func TestIsAuthorized(t *testing.T) {
-	user := &domain.User{ID: primitive.NewObjectID(), Name: "Test"}
+	user := &domain.User{ID: bson.NewObjectID(), Name: "Test"}
 	secret := "secret"
 
 	accessToken, err := tokenutil.CreateAccessToken(user, secret, 1)
@@ -65,7 +65,7 @@ func TestIsAuthorized(t *testing.T) {
 }
 
 func TestExtractIDFromToken(t *testing.T) {
-	user := &domain.User{ID: primitive.NewObjectID(), Name: "Test"}
+	user := &domain.User{ID: bson.NewObjectID(), Name: "Test"}
 	secret := "secret"
 
 	accessToken, err := tokenutil.CreateAccessToken(user, secret, 1)
