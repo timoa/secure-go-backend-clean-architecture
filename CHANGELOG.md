@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.4...v1.1.5) (2025-12-19)
+
+
+### Bug Fixes
+
+* **api:** add a /health endpoint to the API ([35fe2ac](https://github.com/timoa/secure-go-backend-clean-architecture/commit/35fe2acf5760a426338b97a9ea664c611c45f9f7))
+* **deps:** update module github.com/spf13/viper to v1.21.0 ([701aab5](https://github.com/timoa/secure-go-backend-clean-architecture/commit/701aab5596d8f1eae152c31c7b2b24ce7fba40ed))
+
 ## [1.1.4](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.3...v1.1.4) (2025-12-19)
 
 
