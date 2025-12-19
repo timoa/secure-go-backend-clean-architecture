@@ -1,3 +1,12 @@
+## [1.1.4](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.3...v1.1.4) (2025-12-19)
+
+
+### Bug Fixes
+
+* **deps:** fix the Bazel modules issue ([97d95d7](https://github.com/timoa/secure-go-backend-clean-architecture/commit/97d95d7e3d7e80742c64c025fdfaaea9f225606f))
+* **deps:** migrate to Mongo Driver v2.4.1 ([64f96d5](https://github.com/timoa/secure-go-backend-clean-architecture/commit/64f96d5d962294c237a0ba7e55745815d3f6f50e))
+* **deps:** update module github.com/gin-gonic/gin to v1.11.0 ([f94b15b](https://github.com/timoa/secure-go-backend-clean-architecture/commit/f94b15b81990afed114dfcf9b87460ae4298aac9))
+
 ## [1.1.3](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.2...v1.1.3) (2025-12-17)
 
 
