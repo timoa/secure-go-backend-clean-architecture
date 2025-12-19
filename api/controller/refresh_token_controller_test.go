@@ -15,7 +15,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestRefreshTokenController_RefreshToken(t *testing.T) {
@@ -28,8 +28,8 @@ func TestRefreshTokenController_RefreshToken(t *testing.T) {
 		RefreshTokenExpiryHour: 1,
 	}
 
-	userID := primitive.NewObjectID().Hex()
-	user := domain.User{ID: primitive.NewObjectID(), Name: "Test", Email: "test@example.com"}
+	userID := bson.NewObjectID().Hex()
+	user := domain.User{ID: bson.NewObjectID(), Name: "Test", Email: "test@example.com"}
 
 	t.Run("success", func(t *testing.T) {
 		mockUsecase := new(mocks.RefreshTokenUsecase)

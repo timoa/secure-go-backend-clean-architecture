@@ -14,7 +14,7 @@ go_library(
     deps = [
         "//mongo",
         "@com_github_stretchr_testify//mock",
-        "@org_mongodb_go_mongo_driver//mongo",
-        "@org_mongodb_go_mongo_driver//mongo/options",
+        "@org_mongodb_go_mongo_driver_v2//mongo",
+        "@org_mongodb_go_mongo_driver_v2//mongo/options",
     ],
 )

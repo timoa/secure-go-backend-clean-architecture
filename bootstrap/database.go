@@ -29,11 +29,6 @@ func NewMongoDatabase(env *Env) mongo.Client {
 		log.Fatal(err)
 	}
 
-	err = client.Connect(ctx)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	err = client.Ping(ctx)
 	if err != nil {
 		log.Fatal(err)

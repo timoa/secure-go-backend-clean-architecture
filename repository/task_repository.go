@@ -5,8 +5,7 @@ import (
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 type taskRepository struct {
@@ -34,7 +33,7 @@ func (tr *taskRepository) FetchByUserID(c context.Context, userID string) ([]dom
 
 	var tasks []domain.Task
 
-	idHex, err := primitive.ObjectIDFromHex(userID)
+	idHex, err := bson.ObjectIDFromHex(userID)
 	if err != nil {
 		return tasks, err
 	}

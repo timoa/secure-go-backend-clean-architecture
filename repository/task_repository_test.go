@@ -10,7 +10,7 @@ import (
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/repository"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestTaskRepository_Create(t *testing.T) {
@@ -19,10 +19,10 @@ func TestTaskRepository_Create(t *testing.T) {
 
 	collectionName := domain.CollectionTask
 
-	mockTask := &domain.Task{ID: primitive.NewObjectID(), Title: "Test", UserID: primitive.NewObjectID()}
+	mockTask := &domain.Task{ID: bson.NewObjectID(), Title: "Test", UserID: bson.NewObjectID()}
 
 	t.Run("success", func(t *testing.T) {
-		collectionHelper.On("InsertOne", mock.Anything, mock.AnythingOfType("*domain.Task")).Return(primitive.NewObjectID(), nil).Once()
+		collectionHelper.On("InsertOne", mock.Anything, mock.AnythingOfType("*domain.Task")).Return(bson.NewObjectID(), nil).Once()
 		databaseHelper.On("Collection", collectionName).Return(collectionHelper)
 
 		r := repository.NewTaskRepository(databaseHelper, collectionName)
@@ -63,7 +63,7 @@ func TestTaskRepository_FetchByUserID(t *testing.T) {
 	})
 
 	t.Run("find error", func(t *testing.T) {
-		userObjectID := primitive.NewObjectID()
+		userObjectID := bson.NewObjectID()
 		userID := userObjectID.Hex()
 
 		collectionHelper.On("Find", mock.Anything, mock.Anything).Return(nil, errors.New("Unexpected")).Once()
@@ -79,13 +79,13 @@ func TestTaskRepository_FetchByUserID(t *testing.T) {
 	})
 
 	t.Run("success", func(t *testing.T) {
-		userObjectID := primitive.NewObjectID()
+		userObjectID := bson.NewObjectID()
 		userID := userObjectID.Hex()
 
 		collectionHelper.On("Find", mock.Anything, mock.Anything).Return(cursorHelper, nil).Once()
 		cursorHelper.On("All", mock.Anything, mock.Anything).Run(func(args mock.Arguments) {
 			ptr := args.Get(1).(*[]domain.Task)
-			*ptr = []domain.Task{{ID: primitive.NewObjectID(), Title: "T", UserID: userObjectID}}
+			*ptr = []domain.Task{{ID: bson.NewObjectID(), Title: "T", UserID: userObjectID}}
 		}).Return(nil).Once()
 
 		databaseHelper.On("Collection", collectionName).Return(collectionHelper)
@@ -102,7 +102,7 @@ func TestTaskRepository_FetchByUserID(t *testing.T) {
 	})
 
 	t.Run("empty tasks", func(t *testing.T) {
-		userObjectID := primitive.NewObjectID()
+		userObjectID := bson.NewObjectID()
 		userID := userObjectID.Hex()
 
 		collectionHelper.On("Find", mock.Anything, mock.Anything).Return(cursorHelper, nil).Once()

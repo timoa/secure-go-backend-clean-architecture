@@ -29,6 +29,6 @@ go_test(
         "//domain/mocks",
         "@com_github_stretchr_testify//assert",
         "@com_github_stretchr_testify//mock",
-        "@org_mongodb_go_mongo_driver//bson/primitive",
+        "@org_mongodb_go_mongo_driver_v2//bson",
     ],
 )

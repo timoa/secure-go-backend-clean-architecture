@@ -15,5 +15,5 @@ use_repo(
     "com_github_spf13_viper",
     "com_github_stretchr_testify",
     "org_golang_x_crypto",
-    "org_mongodb_go_mongo_driver",
+    "org_mongodb_go_mongo_driver_v2",
 )

@@ -11,12 +11,12 @@ import (
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/usecase"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/v2/bson"
 )
 
 func TestProfileUsecase_GetProfileByID(t *testing.T) {
 	mockUserRepository := new(mocks.UserRepository)
-	userObjectID := primitive.NewObjectID()
+	userObjectID := bson.NewObjectID()
 	userID := userObjectID.Hex()
 
 	t.Run("success", func(t *testing.T) {

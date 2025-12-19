@@ -11,9 +11,8 @@ go_library(
     deps = [
         "//domain",
         "//mongo",
-        "@org_mongodb_go_mongo_driver//bson",
-        "@org_mongodb_go_mongo_driver//bson/primitive",
-        "@org_mongodb_go_mongo_driver//mongo/options",
+        "@org_mongodb_go_mongo_driver_v2//bson",
+        "@org_mongodb_go_mongo_driver_v2//mongo/options",
     ],
 )
 
@@ -29,6 +28,6 @@ go_test(
         "//mongo/mocks",
         "@com_github_stretchr_testify//assert",
         "@com_github_stretchr_testify//mock",
-        "@org_mongodb_go_mongo_driver//bson/primitive",
+        "@org_mongodb_go_mongo_driver_v2//bson",
     ],
 )
