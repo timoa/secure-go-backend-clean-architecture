@@ -4,6 +4,7 @@ bin/
 .idea
 .env
 .vscode
+.windsurf
 coverage.out
 /bazel-*
 /bazel-bin

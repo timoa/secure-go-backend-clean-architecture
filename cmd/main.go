@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"time"
 
 	routeV1 "github.com/amitshekhariitbhu/go-backend-clean-architecture/api/route/v1"
@@ -19,11 +20,15 @@ func main() {
 
 	timeout := time.Duration(env.ContextTimeout) * time.Second
 
-	gin := gin.Default()
+	router := gin.Default()
 
-	routerV1 := gin.Group("v1")
+	router.GET("/health", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"status": "ok"})
+	})
+
+	routerV1 := router.Group("v1")
 
 	routeV1.Setup(env, timeout, db, routerV1)
 
-	gin.Run(env.ServerAddress)
+	router.Run(env.ServerAddress)
 }
