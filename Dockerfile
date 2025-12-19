@@ -1,4 +1,4 @@
-FROM alpine:3.21@sha256:5405e8f36ce1878720f71217d664aa3dea32e5e5df11acbf07fc78ef5661465b AS builder
+FROM alpine:3.22@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412 AS builder
 
 RUN apk add --no-cache \
     bash=5.2.37-r0 \
@@ -24,7 +24,7 @@ RUN curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 -o 
 # Build the binary using Bazel
 RUN bazelisk build //cmd:main
 
-FROM alpine:3.21@sha256:5405e8f36ce1878720f71217d664aa3dea32e5e5df11acbf07fc78ef5661465b
+FROM alpine:3.22@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412
 
 RUN adduser -S app-user
 
