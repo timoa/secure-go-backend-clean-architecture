@@ -17,6 +17,6 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_golang_jwt_jwt_v4//:jwt",
-        "@org_mongodb_go_mongo_driver//bson/primitive",
+        "@org_mongodb_go_mongo_driver_v2//bson",
     ],
 )

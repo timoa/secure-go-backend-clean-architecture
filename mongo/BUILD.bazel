@@ -6,8 +6,8 @@ go_library(
     importpath = "github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo",
     visibility = ["//visibility:public"],
     deps = [
-        "@org_mongodb_go_mongo_driver//mongo",
-        "@org_mongodb_go_mongo_driver//mongo/options",
-        "@org_mongodb_go_mongo_driver//mongo/readpref",
+        "@org_mongodb_go_mongo_driver_v2//mongo",
+        "@org_mongodb_go_mongo_driver_v2//mongo/options",
+        "@org_mongodb_go_mongo_driver_v2//mongo/readpref",
     ],
 )

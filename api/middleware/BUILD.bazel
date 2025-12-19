@@ -21,6 +21,6 @@ go_test(
         "//internal/tokenutil",
         "@com_github_gin_gonic_gin//:gin",
         "@com_github_stretchr_testify//assert",
-        "@org_mongodb_go_mongo_driver//bson/primitive",
+        "@org_mongodb_go_mongo_driver_v2//bson",
     ],
 )
