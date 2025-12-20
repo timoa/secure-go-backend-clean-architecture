@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim@sha256:0f8a5d6b8f8f3e2b5b68e90d2f3d34c7e1d6f7e0a08d8c2e2a9b0a0c9b4a3d21 AS builder
+FROM debian:bookworm-slim AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
