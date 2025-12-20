@@ -1,17 +1,16 @@
 # -- Build stage --------------------------------------------------------------
-FROM alpine:3.22 AS builder
+FROM golang:1.24-bookworm AS builder
 
-RUN apk add --no-cache \
-    bash \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
-    curl \
     git \
-    unzip \
-    build-base \
-    gcompat
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY .bazelrc .bazelversion BUILD.bazel MODULE.bazel MODULE.bazel.lock go.mod go.sum ./
+
+COPY go.mod go.sum ./
+RUN go mod download
+
 COPY api ./api
 COPY bootstrap ./bootstrap
 COPY cmd ./cmd
@@ -21,29 +20,20 @@ COPY mongo ./mongo
 COPY repository ./repository
 COPY usecase ./usecase
 
-# Install bazelisk (respects .bazelversion)
-RUN TARGETARCH="${TARGETARCH:-amd64}" && \
-    case "$TARGETARCH" in \
-      "amd64")  BAZELISK_ARCH="amd64" ;; \
-      "arm64")  BAZELISK_ARCH="arm64" ;; \
-      *) echo "Unsupported TARGETARCH=$TARGETARCH"; exit 1 ;; \
-    esac && \
-    curl --fail --location --proto '=https' --proto-redir '=https' --tlsv1.2 \
-      -o /usr/local/bin/bazelisk \
-      "https://github.com/bazelbuild/bazelisk/releases/download/v1.27.0/bazelisk-linux-${BAZELISK_ARCH}" && \
-    chmod +x /usr/local/bin/bazelisk
-
-# Build the binary using Bazel
-RUN bazelisk build //cmd:main
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app/main ./cmd
 
 # -- Final image -------------------------------------------------------------
-FROM alpine:3.22
+FROM debian:bookworm-slim
 
-RUN adduser -S app-user
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN useradd -r -u 10001 -g nogroup app-user
 
 WORKDIR /app
-COPY --from=builder /app/bazel-bin/cmd/main /app/main
-RUN chown -R app-user /app
+COPY --from=builder /app/main /app/main
+RUN chown -R app-user:nogroup /app
 
 USER app-user
 
