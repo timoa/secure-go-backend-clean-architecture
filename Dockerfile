@@ -1,10 +1,12 @@
-FROM alpine:3.22@sha256:4b7ce07002c69e8f3d704a9c5d6fd3053be500b7f1c69fc0d80990c2ad8dd412 AS builder
+FROM debian:bookworm-slim@sha256:0f8a5d6b8f8f3e2b5b68e90d2f3d34c7e1d6f7e0a08d8c2e2a9b0a0c9b4a3d21 AS builder
 
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \
     ca-certificates \
     curl \
-    git
+    git \
+    unzip \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY .bazelrc .bazelversion BUILD.bazel MODULE.bazel MODULE.bazel.lock go.mod go.sum ./
