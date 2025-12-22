@@ -1,3 +1,23 @@
+# [1.2.0](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.5...v1.2.0) (2025-12-22)
+
+
+### Bug Fixes
+
+* **cicd:** change the harden-runner policy to audit (debug) ([88c39e2](https://github.com/timoa/secure-go-backend-clean-architecture/commit/88c39e2693cac684f3bb2eec2c2ac6ab941992ad))
+* **cicd:** fix the unit-tests and E2E tests ([250a729](https://github.com/timoa/secure-go-backend-clean-architecture/commit/250a7293a854432c5086ea2e771cb273e4a15543))
+* **docker:** change the distro for building the app ([e3b7754](https://github.com/timoa/secure-go-backend-clean-architecture/commit/e3b7754a6ba4c78c21b9586ee2cb6f35b6522fea))
+* **docker:** fix Docker builder stage ([840c0fa](https://github.com/timoa/secure-go-backend-clean-architecture/commit/840c0fa9ee343695f21ca018d4e267c2918534a7))
+* **docker:** fix the Docker Compose health check ([3d5bdf5](https://github.com/timoa/secure-go-backend-clean-architecture/commit/3d5bdf57426ff04e5eb3fd619a0edac361faada6))
+* **docker:** fix the missing GCC package ([b50dfcb](https://github.com/timoa/secure-go-backend-clean-architecture/commit/b50dfcbd9ad9016e7e8ad2780ab047bc63d7631f))
+* **docker:** move to Debian to avoid issue with Alpine old package versions ([381570a](https://github.com/timoa/secure-go-backend-clean-architecture/commit/381570a7eec04a57fba8146a424d6c59ee0b9e5a))
+* **docker:** revert the build with Debian image and make the Dockerfile clearer ([49ce867](https://github.com/timoa/secure-go-backend-clean-architecture/commit/49ce867bcf86189cfe582a4e5f8211ed8107d85e))
+* **docker:** unpin package versions before upgrading to 3.2 ([7b4bb41](https://github.com/timoa/secure-go-backend-clean-architecture/commit/7b4bb41be679a7745f74f51a2d9154ad74d581d9))
+
+
+### Features
+
+* **cicd:** add E2E test using Docker Compose & a Go script to test the API ([122f383](https://github.com/timoa/secure-go-backend-clean-architecture/commit/122f383e3964fa2259080364344996edf6417b1e))
+
 ## [1.1.5](https://github.com/timoa/secure-go-backend-clean-architecture/compare/v1.1.4...v1.1.5) (2025-12-19)
 
 
