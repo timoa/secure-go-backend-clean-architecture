@@ -24,10 +24,24 @@ type Env struct {
 func NewEnv() *Env {
 	env := Env{}
 	viper.SetConfigFile(".env")
+	viper.AutomaticEnv()
+
+	_ = viper.BindEnv("APP_ENV")
+	_ = viper.BindEnv("SERVER_ADDRESS")
+	_ = viper.BindEnv("CONTEXT_TIMEOUT")
+	_ = viper.BindEnv("DB_HOST")
+	_ = viper.BindEnv("DB_PORT")
+	_ = viper.BindEnv("DB_USER")
+	_ = viper.BindEnv("DB_PASS")
+	_ = viper.BindEnv("DB_NAME")
+	_ = viper.BindEnv("ACCESS_TOKEN_EXPIRY_HOUR")
+	_ = viper.BindEnv("REFRESH_TOKEN_EXPIRY_HOUR")
+	_ = viper.BindEnv("ACCESS_TOKEN_SECRET")
+	_ = viper.BindEnv("REFRESH_TOKEN_SECRET")
 
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Fatal("Can't find the file .env : ", err)
+		log.Printf("No .env file found, using environment variables only: %v", err)
 	}
 
 	err = viper.Unmarshal(&env)
