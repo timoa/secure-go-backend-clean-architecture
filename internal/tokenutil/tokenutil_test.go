@@ -7,7 +7,7 @@ import (
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/tokenutil"
-	jwt "github.com/golang-jwt/jwt/v4"
+	jwt "github.com/golang-jwt/jwt/v5"
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/v2/bson"
 )

@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
-	jwt "github.com/golang-jwt/jwt/v4"
+	jwt "github.com/golang-jwt/jwt/v5"
 )
 
 func CreateAccessToken(user *domain.User, secret string, expiry int) (accessToken string, err error) {

@@ -7,7 +7,7 @@ go_library(
     visibility = ["//:__subpackages__"],
     deps = [
         "//domain",
-        "@com_github_golang_jwt_jwt_v4//:jwt",
+        "@com_github_golang_jwt_jwt_v5//:jwt",
     ],
 )
 
@@ -17,7 +17,7 @@ go_test(
     deps = [
         ":tokenutil",
         "//domain",
-        "@com_github_golang_jwt_jwt_v4//:jwt",
+        "@com_github_golang_jwt_jwt_v5//:jwt",
         "@com_github_stretchr_testify//assert",
         "@org_mongodb_go_mongo_driver_v2//bson",
     ],
