@@ -56,7 +56,7 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           reporter: github-pr-review
           filter_mode: nofilter
-          fail_on_error: true
+          fail_level: error
 
   # -- DOCKER LINT ------------------------------------------------------------
   docker-lint:
