@@ -3,8 +3,6 @@
   "extends": [
     "github>renovatebot/.github"
   ],
-  "platform": "github",
-  "platformAutomerge": true,
   "branchPrefix": "fix/deps/",
   "addLabels": [
     "dependencies",
@@ -24,15 +22,17 @@
         "minor",
         "patch"
       ],
-      "automerge": true,
-      "branchTopic": "{{{depNameSanitized}}}-{{{currentValue}}}"
+      "automerge": true
     },
     {
       "description": "Allow updates after 15 days (exclude renovate)",
+      "matchPackagePatterns": [
+        "*"
+      ],
       "separateMinorPatch": true,
       "minimumReleaseAge": "15 days",
-      "matchPackageNames": [
-        "!renovate/renovate"
+      "excludePackageNames": [
+        "renovate/renovate"
       ]
     }
   ]
