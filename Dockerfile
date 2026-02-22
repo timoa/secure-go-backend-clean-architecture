@@ -1,5 +1,5 @@
 # -- Build stage --------------------------------------------------------------
-FROM golang:1.24-bookworm@sha256:fc58bb98c4b7ebc8211c94df9dee40489e48363c69071bceca91aa59023b0dee AS builder
+FROM golang:1.25-bookworm@sha256:38342f3e7a504bf1efad858c18e771f84b66dc0b363add7a57c9a0bbb6cf7b12 AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
