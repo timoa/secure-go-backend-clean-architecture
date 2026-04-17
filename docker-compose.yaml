@@ -14,7 +14,7 @@ services:
         condition: service_healthy
 
   mongodb:
-    image: mongo:8.2@sha256:7f5bbdafebde7c42e42e33396d01c0eda3eb753da8dae99071a30e350568a0a4
+    image: mongo:8.2@sha256:7abfba0d07c9330373f8173981ea4d09cd8a82cdf0e86ccaf7008848d1d24f62
     container_name: mongodb
     restart: unless-stopped
     env_file: .env
